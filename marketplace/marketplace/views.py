@@ -12,3 +12,6 @@ def checkout(request):
 
 def blank(request):
     return render(request, 'blank.html', {})
+
+def product(request):
+    return render(request, 'product.html', {})

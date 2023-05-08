@@ -22,5 +22,6 @@ urlpatterns = [
     path('store/', views.store, name='store'),
     path('checkout/', views.checkout, name='checkout'),
     path('blank/', views.blank, name='blank'),
+    path('product/', views.product, name='product'),
     path('auth/', include('authentication.urls')),
 ]

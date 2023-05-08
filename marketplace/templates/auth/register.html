@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Регистрация
+{% endblock title %}
+{% block container %}
+<div class="main" style="text-align: center">
+  <div class="one">
+    <div class="register">
+      <h1>Create your account</h1>
+      <form id="reg-form" method="post" action="{% url 'register' %}">
+        {% csrf_token %}
+        {% for field in user_form %}
+        <div>
+          <span style="color: red">{{ field.errors }}</span>
+          {{ field }}
+          {{ field.label_tag}}
+        </div>
+        {% endfor %}
+        <div>
+          <input type="submit" value="Create Account" id="create-account" class="primary-btn" style="margin-top: 30px"/>
+          <label></label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock container %}

@@ -13,7 +13,7 @@ class LoginForm(forms.Form):
         password = cleaned_data.get('password')
 
         try:
-            self.user = User.objects.get()
+            self.user = User.objects.get(username=username)
         except User.DoesNotExist:
             raise forms.ValidationError(f'User with username {username} does not exist!')
 

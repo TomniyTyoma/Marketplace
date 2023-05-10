@@ -17,12 +17,12 @@ def login_user(request):
                 return redirect('home')
             else:
                 context = {
-                    'login_form': LoginForm(request.POST),
+                    'login_form': login_form,
                     'attention': f'Пользователь с именем {username} не был зарегистрирован!'
                 }
         else:
             context = {
-                'login_form': LoginForm(request.POST),
+                'login_form': login_form,
             }
 
     return render(request, 'auth/login.html', context)
@@ -31,7 +31,7 @@ def login_user(request):
 class RegisterView(TemplateView):
     template_name = 'auth/register.html'
 
-    def get(self, request):
+    def get(self, request, **kwargs):
         user_form = RegisterForm()
         context = {'user_form': user_form}
         return render(request, 'auth/register.html', context)

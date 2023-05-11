@@ -47,16 +47,15 @@
 				<li><a href=""><i class="fa fa-envelope-o"></i> semeykin-artem@mail.ru</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<li><a href="#"><i class="fa fa-rub"></i> RUB</a></li>
 				{% if user.is_authenticated %}
-					<li><a href="">{{ user.username }}</a></li>
+					<li><a href=""><i class="fa fa-user-circle"></i>{{ user.username }}</a></li>
 				{% else %}
 					<li><a href="{% url 'register' %}"><i class="fa fa-key"></i>Регистрация</a></li>
 				{% endif %}
 				{% if user.is_authenticated %}
-					<li><a href="{% url 'logout' %}"><i class="fa fa-user-o"></i>Выход</a></li>
+					<li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i>Выход</a></li>
 				{% else %}
-					<li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i>Вход</a></li>
+					<li><a href="{% url 'login' %}"><i class="fa fa-sign-in"></i>Вход</a></li>
 				{% endif %}
 			</ul>
 		</div>
@@ -90,7 +89,7 @@
 								<option value="1">Камеры</option>
 								<option value="1">Аксессуары</option>
 							</select>
-							<input class="input" placeholder="Search here">
+							<input class="input" placeholder="Искать">
 							<button class="search-btn">Поиск</button>
 						</form>
 					</div>
@@ -234,7 +233,7 @@
 				<div class="col-md-3 col-xs-6">
 					<div class="footer">
 						<h3 class="footer-title">О нас</h3>
-						<p>Нам очень важно мнение каждого клиента, это принцип нашей работы.</p>
+						<p>Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст Текст</p>
 						<ul class="footer-links">
 							<li><a href="Tel:89127972734"><i class="fa fa-phone"></i>+7-912-797-27-34</a></li>
 							<li><a href="https://mail.ru/"><i class="fa fa-envelope-o"></i>semeykin-artem@mail.ru</a></li>
@@ -246,7 +245,6 @@
 					<div class="footer">
 						<h3 class="footer-title">Категории</h3>
 						<ul class="footer-links">
-							<li><a href="#">Лучшие предложения</a></li>
 							<li><a href="#">Ноутбуки</a></li>
 							<li><a href="#">Смартфоны</a></li>
 							<li><a href="#">Камеры</a></li>
@@ -263,7 +261,6 @@
 						<ul class="footer-links">
 							<li><a href="#">О нас</a></li>
 							<li><a href="#">Связаться с нами</a></li>
-							<li><a href="#">Политика конфиденциальности</a></li>
 							<li><a href="#">Заказы и возвраты</a></li>
 							<li><a href="#">Условия</a></li>
 						</ul>
@@ -276,7 +273,6 @@
 						<ul class="footer-links">
 							<li><a href="#">Мой аккаунт</a></li>
 							<li><a href="#">Посмотреть корзину</a></li>
-							<li><a href="#">Список желаний</a></li>
 							<li><a href="#">Отслеживать мой заказ</a></li>
 							<li><a href="#">Помощь</a></li>
 						</ul>

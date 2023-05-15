@@ -10,10 +10,15 @@
       <user-name>postgres</user-name>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database">
-            <name qname="django" />
-            <name qname="marketbase" />
-            <node kind="schema" qname="public" />
+          <node negative="1">
+            <node kind="database">
+              <name qname="marketbase" />
+              <name qname="django" />
+              <node kind="schema" qname="public" />
+            </node>
+            <node kind="database" qname="postgres">
+              <node kind="schema" negative="1" />
+            </node>
           </node>
         </introspection-scope>
       </schema-mapping>

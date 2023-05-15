@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment="Бесполезный текст">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/marketbase.DR2eQg/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/marketbase.DR2eQg/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/83f951cf-c8c7-4e81-8110-44434e2a4b27/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment="Миграция таблиц в базу данных">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/pools/migrations/0001_brand_category_product.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/pools/migrations/0002_order_remove_product_image_product_image_url_review_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/pools/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/pools/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/pools/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/pools/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,7 @@
       <workItem from="1683811399826" duration="10688000" />
       <workItem from="1683873202642" duration="614000" />
       <workItem from="1683965876600" duration="8929000" />
-      <workItem from="1684150228919" duration="12306000" />
+      <workItem from="1684150228919" duration="14712000" />
     </task>
     <task id="LOCAL-00001" summary="commit product page">
       <created>1683556748372</created>
@@ -215,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684167834812</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Миграция таблиц в базу данных">
+      <created>1684169505031</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684169505031</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +239,8 @@
     <MESSAGE value="README" />
     <MESSAGE value="Правки в функции login_user" />
     <MESSAGE value="Бесполезный текст" />
-    <option name="LAST_COMMIT_MESSAGE" value="Бесполезный текст" />
+    <MESSAGE value="Миграция таблиц в базу данных" />
+    <option name="LAST_COMMIT_MESSAGE" value="Миграция таблиц в базу данных" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

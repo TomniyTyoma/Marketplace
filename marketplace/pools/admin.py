@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
 from .models import Brand, Category, Product, Order, OrderItem, Profile
 
-
 admin.site.unregister(User)
 
 

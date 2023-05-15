@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from django.utils import timezone
 
 
 class Brand(models.Model):
@@ -88,6 +89,19 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.user} - {self.amount} - {self.status}'
+
+    @staticmethod
+    def get_cart(user: User):
+        cart = Order.objects.filter(user=user, status=Order.STATUS_CART).first()
+
+        if cart and (timezone.now() - cart.creation_time).days > 0:
+            cart.delete()
+            cart = None
+
+        if not cart:
+            cart = Order.objects.create(user=user, status=Order.STATUS_CART, amount=0).first()
+
+        return cart
 
 
 class OrderItem(models.Model):

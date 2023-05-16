@@ -1,6 +1,9 @@
+from decimal import Decimal
+
 from django.contrib.auth.models import User
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models import Sum
+from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
 from django.utils import timezone
 
@@ -103,6 +106,23 @@ class Order(models.Model):
 
         return cart
 
+    def get_amount(self):
+        amount = Decimal(0)
+        for item in self.orderitem_set.all():
+            amount += item.amount
+        return amount
+
+    def make_order(self):
+        items = self.orderitem_set.all()
+        if items and self.status == Order.STATUS_CART:
+            self.status = Order.STATUS_WAITING_FOR_PAYMENT
+            self.save()
+
+    @staticmethod
+    def get_amount_of_unpaid_orders(user: User):
+        amount = Order.objects.filter(user=user, status=Order.STATUS_WAITING_FOR_PAYMENT,).aggregate(Sum('amount'))['amount__sum']
+        return amount or Decimal(0)
+
 
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -116,3 +136,19 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f'{self.product} - {self.price} - {self.quantity}'
+
+    @property
+    def amount(self):
+        return self.quantity * (self.price - self.discount)
+
+@receiver(post_save, sender=OrderItem)
+def recalculate_order_amount_after_save(sender, instance, **kwargs):
+    order = instance.order
+    order.amount = order.get_amount()
+    order.save()
+
+@receiver(post_delete, sender=OrderItem)
+def recalculate_order_amount_after_delete(sender, instance, **kwargs):
+    order = instance.order
+    order.amount = order.get_amount()
+    order.save()

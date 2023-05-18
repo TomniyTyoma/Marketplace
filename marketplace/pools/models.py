@@ -64,6 +64,7 @@ class Review(models.Model):
     rating = models.DecimalField(max_digits=2, decimal_places=1)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
     class Meta:
         ordering = ['pk']
 
@@ -120,7 +121,8 @@ class Order(models.Model):
 
     @staticmethod
     def get_amount_of_unpaid_orders(user: User):
-        amount = Order.objects.filter(user=user, status=Order.STATUS_WAITING_FOR_PAYMENT,).aggregate(Sum('amount'))['amount__sum']
+        amount = Order.objects.filter(user=user, status=Order.STATUS_WAITING_FOR_PAYMENT, ).aggregate(Sum('amount'))[
+            'amount__sum']
         return amount or Decimal(0)
 
 
@@ -141,11 +143,13 @@ class OrderItem(models.Model):
     def amount(self):
         return self.quantity * (self.price - self.discount)
 
+
 @receiver(post_save, sender=OrderItem)
 def recalculate_order_amount_after_save(sender, instance, **kwargs):
     order = instance.order
     order.amount = order.get_amount()
     order.save()
+
 
 @receiver(post_delete, sender=OrderItem)
 def recalculate_order_amount_after_delete(sender, instance, **kwargs):

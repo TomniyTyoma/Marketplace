@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-#from marketplace.pools.models import
+from django.shortcuts import render
+
+
 
 
 def home(request):
@@ -20,3 +21,10 @@ def blank(request):
 
 def product(request):
     return render(request, 'product.html', {})
+
+
+
+
+
+
+

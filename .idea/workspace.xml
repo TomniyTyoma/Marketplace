@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment="корзина и изменение суммы заказа">
+    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/marketplace/shop/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/marketplace/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/pools/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/pools/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/marketplace/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/wsgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/static/css/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/templates/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,25 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;import_schema_mapping&quot;: &quot;&lt;schema-mapping&gt;\n  &lt;databases&gt;\n    &lt;list&gt;\n      &lt;schema-mapping-item&gt;\n        &lt;source-data-source-id&gt;99c2e0aa-a765-4be7-ac34-ed1f44bc1f7e&lt;/source-data-source-id&gt;\n        &lt;source-path&gt;database/&amp;quot;django&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/source-path&gt;\n        &lt;target-data-source-id&gt;9ff594d7-d6ac-4c86-8b75-c148f970c93c&lt;/target-data-source-id&gt;\n        &lt;target-path&gt;database/&amp;quot;marketbase&amp;quot;/schema/&amp;quot;public&amp;quot;&lt;/target-path&gt;\n      &lt;/schema-mapping-item&gt;\n    &lt;/list&gt;\n  &lt;/databases&gt;\n&lt;/schema-mapping&gt;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Artyom/Desktop/My_first_site&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "import_schema_mapping": "<schema-mapping>\n  <databases>\n    <list>\n      <schema-mapping-item>\n        <source-data-source-id>99c2e0aa-a765-4be7-ac34-ed1f44bc1f7e</source-data-source-id>\n        <source-path>database/&quot;django&quot;/schema/&quot;public&quot;</source-path>\n        <target-data-source-id>9ff594d7-d6ac-4c86-8b75-c148f970c93c</target-data-source-id>\n        <target-path>database/&quot;marketbase&quot;/schema/&quot;public&quot;</target-path>\n      </schema-mapping-item>\n    </list>\n  </databases>\n</schema-mapping>",
+    "last_opened_file_path": "C:/Users/Artyom/Desktop/Marketplace/marketplace/static/css",
+    "list.type.of.created.stylesheet": "SCSS",
+    "settings.editor.selected.configurable": "watcher.settings"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Artyom\Desktop\Marketplace\marketplace\static\css" />
       <recent name="C:\Users\Artyom\Desktop\Marketplace\marketplace\authentication" />
       <recent name="C:\Users\Artyom\Desktop\Marketplace\marketplace\static\img" />
       <recent name="C:\Users\Artyom\Desktop\Marketplace\marketplace\marketplace" />
@@ -105,7 +113,9 @@
       <workItem from="1683965876600" duration="8929000" />
       <workItem from="1684150228919" duration="18464000" />
       <workItem from="1684219982747" duration="5018000" />
-      <workItem from="1684405953941" duration="1553000" />
+      <workItem from="1684405953941" duration="7741000" />
+      <workItem from="1684568293437" duration="645000" />
+      <workItem from="1684569215571" duration="1961000" />
     </task>
     <task id="LOCAL-00001" summary="commit product page">
       <created>1683556748372</created>
@@ -233,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684222158080</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary=".">
+      <created>1684411795079</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1684411795079</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,7 +276,8 @@
     <MESSAGE value="Бесполезный текст" />
     <MESSAGE value="Миграция таблиц в базу данных" />
     <MESSAGE value="корзина и изменение суммы заказа" />
-    <option name="LAST_COMMIT_MESSAGE" value="корзина и изменение суммы заказа" />
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

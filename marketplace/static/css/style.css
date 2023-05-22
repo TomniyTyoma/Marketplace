@@ -634,8 +634,7 @@ textarea.input {
 }
 
 .main-nav>li>a {
-  padding: 20px 0px;
-
+  padding: 20px 0;
 }
 
 .main-nav>li>a:hover, .main-nav>li>a:focus, .main-nav>li.active>a {

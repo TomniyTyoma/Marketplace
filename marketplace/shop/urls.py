@@ -5,9 +5,7 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('store/', views.store, name='store'),
-    path('checkout/', views.checkout, name='checkout'),
-    path('blank/', views.blank, name='blank'),
-    path('product/', views.product, name='product'),
+    path('store/', include('stooore.urls')),
     path('auth/', include('authentication.urls')),
+
 ]

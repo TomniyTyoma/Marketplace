@@ -47,8 +47,8 @@ class Migration(migrations.Migration):
                 ('price', models.DecimalField(decimal_places=2, max_digits=19)),
                 ('description', models.TextField(blank=True, null=True)),
                 ('image_url', models.URLField(blank=True, null=True)),
-                ('brand_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pools.brand')),
-                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pools.category')),
+                ('brand_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='stooore.brand')),
+                ('category_id', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='stooore.category')),
             ],
         ),
         migrations.CreateModel(
@@ -56,7 +56,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('rating', models.DecimalField(decimal_places=1, max_digits=2)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pools.product')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='stooore.product')),
                 ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
@@ -77,8 +77,8 @@ class Migration(migrations.Migration):
                 ('quantity', models.PositiveIntegerField(default=1)),
                 ('price', models.DecimalField(decimal_places=2, max_digits=19)),
                 ('discount', models.DecimalField(decimal_places=2, default=0, max_digits=19)),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pools.order')),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='pools.product')),
+                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='stooore.order')),
+                ('product', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to='stooore.product')),
             ],
         ),
     ]

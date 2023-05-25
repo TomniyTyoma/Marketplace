@@ -12,7 +12,7 @@ class Brand(models.Model):
     brand_name = models.CharField(max_length=30)
 
     class Meta:
-        ordering = ['pk']
+        ordering = ['brand_name']
 
     def __str__(self):
         return f'{self.brand_name}'
@@ -22,7 +22,7 @@ class Category(models.Model):
     category_name = models.CharField(max_length=30)
 
     class Meta:
-        ordering = ['pk']
+        ordering = ['category_name']
 
     def __str__(self):
         return f'{self.category_name}'
@@ -35,9 +35,10 @@ class Product(models.Model):
     brand_id = models.ForeignKey(Brand, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     image_url = models.URLField(blank=True, null=True)
+    availability = models.BooleanField(default=True)
 
     class Meta:
-        ordering = ['pk']
+        ordering = ['product_name']
 
     def __str__(self):
         return f'{self.product_name} - {self.price}'
@@ -62,6 +63,7 @@ class Profile(models.Model):
 
 class Review(models.Model):
     rating = models.DecimalField(max_digits=2, decimal_places=1)
+    text = models.TextField(default='')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

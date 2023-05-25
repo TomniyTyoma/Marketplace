@@ -49,7 +49,7 @@
 		<div class="container">
 			<ul class="header-links pull-left">
 				<li><a href="Tel:89127972734"><i class="fa fa-phone"></i> +7-912-797-27-34</a></li>
-				<li><a href=""><i class="fa fa-envelope-o"></i> semeykin-artem@mail.ru</a></li>
+				<li><a><i class="fa fa-envelope-o"></i> semeykin-artem@mail.ru</a></li>
 			</ul>
 			<ul class="header-links pull-right">
 				{% if user.is_authenticated %}
@@ -76,7 +76,7 @@
 				<!-- LOGO -->
 				<div class="col-md-3" style="margin-top: 20px">
 					<div class="header-logo">
-						<a href="" class="logo">
+						<a href="{% url 'home' %}" class="logo">
 							<img src="{% static '/img/kt1sg4dqphsig4dxqy (2).png' %}" alt="">
 						</a>
 					</div>
@@ -140,8 +140,8 @@
 									<h5>SUBTOTAL: $2940.00</h5>
 								</div>
 								<div class="cart-btns">
-									<a href="#">View Cart</a>
-									<a href="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+									<a href="{% url 'cart' %}">View Cart</a>
+									<a href="{% url 'checkout' %}">Checkout <i class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -175,8 +175,8 @@
 		<div id="responsive-nav">
 			<!-- NAV -->
 			<ul class="main-nav nav navbar-nav">
-				<li class="active"><a href="/">Главная</a></li>
-				<li><a href="/store">Категории</a></li>
+				<li class="active"><a href="{% url 'home' %}">Главная</a></li>
+				<li><a href="{% url 'store' %}">Категории</a></li>
 				<li><a href="">Ноутбуки</a></li>
 				<li><a href="#">Смартфоны</a></li>
 				<li><a href="#">Камеры</a></li>

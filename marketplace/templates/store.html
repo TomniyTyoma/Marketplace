@@ -204,20 +204,21 @@ Techno-Shop | Категории
                 <!-- stooore stooore -->
                 <div class="row">
                     <!-- product -->
+                    {% for product in object_list %}
                     <div class="col-md-4 col-xs-6" style="margin-top: 75px">
                         <div class="product">
                             <div class="product-img">
-                                <img src="{% static '/img/product01.png' %}" alt="">
+                                <img src="{{product.image_url}}" alt="">
                                 <div class="product-label">
-                                    <span class="sale">-30%</span>
-                                    <span class="new">Новинка</span>
+<!--                                    <span class="sale">-30%</span>-->
+<!--                                    <span class="new">Новинка</span>-->
                                 </div>
                             </div>
                             <div class="product-body">
-                                <p class="product-category">Категория</p>
-                                <h3 class="product-name"><a href="/product">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
+                                <p class="product-category">{{product.category_}}</p>
+                                <h3 class="product-name"><a href="{% url 'product' %}">{{product.product_name}}</a></h3>
+                                <h4 class="product-price">{{product.price}}
+<!--                                    <del class="product-old-price">$990.00</del>-->
                                 </h4>
                                 <div class="product-rating">
                                     <i class="fa fa-star"></i>
@@ -226,270 +227,271 @@ Techno-Shop | Категории
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star"></i>
                                 </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
+<!--                                <div class="product-btns">-->
+<!--&lt;!&ndash;                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </button>&ndash;&gt;-->
+<!--                                </div>-->
                             </div>
                             <div class="add-to-cart">
                                 <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                     <!-- /product -->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product02.png' %}" alt="">
-                                <div class="product-label">
-                                    <span class="new">Новинка</span>
-                                </div>
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="/product">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product02.png' %}" alt="">-->
+<!--                                <div class="product-label">-->
+<!--                                    <span class="new">Новинка</span>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="/product">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star-o"></i>-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <div class="clearfix visible-sm visible-xs"></div>
+<!--                    <div class="clearfix visible-sm visible-xs"></div>-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product03.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product03.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <div class="clearfix visible-lg visible-md"></div>
+<!--                    <div class="clearfix visible-lg visible-md"></div>-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product04.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product04.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <div class="clearfix visible-sm visible-xs"></div>
+<!--                    <div class="clearfix visible-sm visible-xs"></div>-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product05.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product05.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product06.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product06.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star-o"></i>-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>
+<!--                    <div class="clearfix visible-lg visible-md visible-sm visible-xs"></div>-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product07.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product07.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                    <i class="fa fa-star"></i>-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product08.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /product -->
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product08.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    &lt;!&ndash; /product &ndash;&gt;-->
 
-                    <div class="clearfix visible-sm visible-xs"></div>
+<!--                    <div class="clearfix visible-sm visible-xs"></div>-->
 
-                    <!-- product -->
-                    <div class="col-md-4 col-xs-6">
-                        <div class="product">
-                            <div class="product-img">
-                                <img src="{% static '/img/product09.png' %}" alt="">
-                            </div>
-                            <div class="product-body">
-                                <p class="product-category">Category</p>
-                                <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                <h4 class="product-price">$980.00
-                                    <del class="product-old-price">$990.00</del>
-                                </h4>
-                                <div class="product-rating">
-                                </div>
-                                <div class="product-btns">
-                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>
-                                    </button>
-                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="add-to-cart">
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>
-                            </div>
-                        </div>
-                    </div>
+<!--                    &lt;!&ndash; product &ndash;&gt;-->
+<!--                    <div class="col-md-4 col-xs-6">-->
+<!--                        <div class="product">-->
+<!--                            <div class="product-img">-->
+<!--                                <img src="{% static '/img/product09.png' %}" alt="">-->
+<!--                            </div>-->
+<!--                            <div class="product-body">-->
+<!--                                <p class="product-category">Category</p>-->
+<!--                                <h3 class="product-name"><a href="#">product name goes here</a></h3>-->
+<!--                                <h4 class="product-price">$980.00-->
+<!--                                    <del class="product-old-price">$990.00</del>-->
+<!--                                </h4>-->
+<!--                                <div class="product-rating">-->
+<!--                                </div>-->
+<!--                                <div class="product-btns">-->
+<!--                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span>-->
+<!--                                    </button>-->
+<!--                                    <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="add-to-cart">-->
+<!--                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <!-- /product -->
                 </div>
                 <!-- /stooore stooore -->

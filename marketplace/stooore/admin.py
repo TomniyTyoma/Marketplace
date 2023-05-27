@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.contrib.auth.admin import UserAdmin
-from .models import Brand, Category, Product, Order, OrderItem, Profile, Review
+from .models import Brand, Category, Product, Order, OrderItem, Profile, Review, OtherImgs
 
 admin.site.unregister(User)
 
@@ -21,3 +21,4 @@ admin.site.register(Product)
 admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Review)
+admin.site.register(OtherImgs)

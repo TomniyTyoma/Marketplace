@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 
 from .models import Product
 
@@ -12,10 +12,12 @@ def blank(request):
     return render(request, 'store/cart.html', {})
 
 
-def product(request):
-    return render(request, 'store/product.html', {})
-
-
 class ProductsListView(ListView):
     model = Product
     template_name = 'store.html'
+
+
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'product.html'
+

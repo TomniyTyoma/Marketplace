@@ -13,6 +13,8 @@ class Brand(models.Model):
 
     class Meta:
         ordering = ['brand_name']
+        verbose_name = 'Бренд'
+        verbose_name_plural = 'Бренды'
 
     def __str__(self):
         return f'{self.brand_name}'
@@ -23,6 +25,8 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['category_name']
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
 
     def __str__(self):
         return f'{self.category_name}'
@@ -36,12 +40,27 @@ class Product(models.Model):
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
     image_url = models.URLField(blank=True, null=True)
     availability = models.BooleanField(default=True)
+    is_best_offer = models.BooleanField(default=False)
+
 
     class Meta:
         ordering = ['product_name']
+        verbose_name = 'Товар'
+        verbose_name_plural = 'Товары'
 
     def __str__(self):
-        return f'{self.product_name} - {self.price}'
+        return f'{self.product_name} -- {self.price}'
+
+
+class OtherImgs(models.Model):
+    img_urls = models.URLField(blank=True, null=True)
+    product_id = models.ForeignKey(Product, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['product_id']
+        verbose_name = 'Другие изображения товара'
+        verbose_name_plural = 'Другие изображения товаров'
+
 
 
 class Profile(models.Model):
@@ -69,6 +88,8 @@ class Review(models.Model):
 
     class Meta:
         ordering = ['pk']
+        verbose_name = 'Обзор'
+        verbose_name_plural = 'Обзоры'
 
     def __str__(self):
         return f'{self.user} - {self.product} - {self.rating}'
@@ -92,6 +113,8 @@ class Order(models.Model):
 
     class Meta:
         ordering = ['pk']
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
 
     def __str__(self):
         return f'{self.user} - {self.amount} - {self.status}'
@@ -137,6 +160,8 @@ class OrderItem(models.Model):
 
     class Meta:
         ordering = ['pk']
+        verbose_name = 'Товар в заказе'
+        verbose_name_plural = 'Товары в заказе'
 
     def __str__(self):
         return f'{self.product} - {self.price} - {self.quantity}'

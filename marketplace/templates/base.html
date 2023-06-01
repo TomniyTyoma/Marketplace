@@ -109,39 +109,33 @@
 							<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 								<i class="fa fa-shopping-cart"></i>
 								<span>Ваша корзина</span>
-								<div class="qty">3</div>
+								<div class="qty">{{ cart.quantity }}</div>
 							</a>
 							<div class="cart-dropdown">
 								<div class="cart-list">
+									{% for item in items %}
 									<div class="product-widget">
 										<div class="product-img">
-											<img src="{% static '/img/product01.png' %}" alt="">
+											<img src="{{item.product.image_url}}" alt="">
 										</div>
 										<div class="product-body">
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+											<h3 class="product-name"><a href="{% url 'product' item.product.pk %}">{{ item.product }}</a></h3>
+											<h4 class="product-price"><span class="qty">{{ item.quantity }}x</span>{{ item.price }}</h4>
 										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
+										<form method="post" action="{% url 'cart_delete_item' item.pk %}">
+        									{% csrf_token %}
+											<button class="delete"><i class="fa fa-close"></i></button>
+										</form>
 									</div>
-
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="{% static '/img/product02.png' %}" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name"><a href="#">product name goes here</a></h3>
-											<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-										</div>
-										<button class="delete"><i class="fa fa-close"></i></button>
-									</div>
+									{% endfor %}
 								</div>
 								<div class="cart-summary">
-									<small>3 Item(s) selected</small>
-									<h5>SUBTOTAL: $2940.00</h5>
+<!--									<small>3 Item(s) selected</small>-->
+									<h5>Итого: {{ cart.amount }} Руб.</h5>
 								</div>
 								<div class="cart-btns">
-									<a href="{% url 'cart' %}">View Cart</a>
-									<a href="{% url 'checkout' %}">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+									<a href="{% url 'cart' %}">В корзину</a>
+									<a href="{% url 'checkout' %}">К заказу<i class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>

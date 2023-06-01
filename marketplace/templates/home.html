@@ -95,10 +95,10 @@
 								<div class="product">
 									<div class="product-img">
 										<img src="{{product.image_url}}" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-											<span class="new">Новинка</span>
-										</div>
+<!--										<div class="product-label">-->
+<!--											<span class="sale">-30%</span>-->
+<!--											<span class="new">Новинка</span>-->
+<!--										</div>-->
 									</div>
 									<div class="product-body">
 										<p class="product-category">{{product.category_id}}</p>
@@ -177,7 +177,7 @@
 					</ul>
 					<h2 class="text-uppercase">Лучшее предложение недели</h2>
 					<p>New Collection Up to 50% OFF</p>
-					<a class="primary-btn cta-btn" href="/product">Купить сейчас</a>
+					<a class="primary-btn cta-btn" href="">Купить сейчас</a>
 				</div>
 			</div>
 		</div>
@@ -222,10 +222,10 @@
 								<div class="product">
 									<div class="product-img">
 										<img src="{{product.image_url}}" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-											<span class="new">НОВИНКА</span>
-										</div>
+<!--										<div class="product-label">-->
+<!--											<span class="sale">-30%</span>-->
+<!--											<span class="new">НОВИНКА</span>-->
+<!--										</div>-->
 									</div>
 									<div class="product-body">
 										<p class="product-category">{{product.category_id}}</p>
@@ -241,9 +241,9 @@
 											<i class="fa fa-star"></i>
 										</div>
 										<div class="product-btns">
-											<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-													class="tooltipp">add to compare</span></button>
-											<a href="{% url 'product' product.pk %}"><button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button></a>
+<!--											<button class="add-to-compare"><i class="fa fa-exchange"></i><span-->
+<!--													class="tooltipp">add to compare</span></button>-->
+											<button class="quick-view"><a href="{% url 'product' product.pk %}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
 										</div>
 									</div>
 									<div class="add-to-cart">

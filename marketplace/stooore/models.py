@@ -9,7 +9,7 @@ from django.utils import timezone
 
 
 class Brand(models.Model):
-    brand_name = models.CharField(max_length=30)
+    brand_name = models.CharField('Бренд', max_length=30)
 
     class Meta:
         ordering = ['brand_name']
@@ -21,7 +21,7 @@ class Brand(models.Model):
 
 
 class Category(models.Model):
-    category_name = models.CharField(max_length=30)
+    category_name = models.CharField('Категория', max_length=30)
 
     class Meta:
         ordering = ['category_name']
@@ -33,23 +33,23 @@ class Category(models.Model):
 
 
 class Product(models.Model):
-    product_name = models.CharField(max_length=150)
-    price = models.DecimalField(max_digits=19, decimal_places=2)
-    description = models.TextField(blank=True, null=True)
+    product_name = models.CharField('Название', max_length=150)
+    price = models.DecimalField('Цена', max_digits=19, decimal_places=2)
+    description = models.TextField('Описание', blank=True, null=True)
+    char = models.TextField('Характеристики', default='')
     brand_id = models.ForeignKey(Brand, on_delete=models.CASCADE)
     category_id = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image_url = models.URLField(blank=True, null=True)
+    image_url = models.URLField('Изображение', blank=True, null=True)
     availability = models.BooleanField(default=True)
-    is_best_offer = models.BooleanField(default=False)
-
+    is_best_offer = models.BooleanField('Лучшее предложение', default=False)
 
     class Meta:
-        ordering = ['product_name']
+        ordering = ['availability', '-category_id', 'price']
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
 
     def __str__(self):
-        return f'{self.product_name} -- {self.price}'
+        return f'{self.product_name}'
 
 
 class OtherImgs(models.Model):
@@ -60,7 +60,6 @@ class OtherImgs(models.Model):
         ordering = ['product_id']
         verbose_name = 'Другие изображения товара'
         verbose_name_plural = 'Другие изображения товаров'
-
 
 
 class Profile(models.Model):
@@ -107,6 +106,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=40, choices=STATUS_CHOICES, default=STATUS_CART)
     comment = models.TextField()
+    quantity = models.PositiveIntegerField()
     amount = models.DecimalField(max_digits=19, decimal_places=2, blank=True, null=True)
     address = models.CharField(max_length=250, blank=True, null=True)
     creation_time = models.DateTimeField(auto_now_add=True)
@@ -137,6 +137,12 @@ class Order(models.Model):
         for item in self.orderitem_set.all():
             amount += item.amount
         return amount
+
+    def get_quantity(self):
+        quantity = Decimal(0)
+        for item in self.orderitem_set.all():
+            quantity += item.quantity
+        return quantity
 
     def make_order(self):
         items = self.orderitem_set.all()

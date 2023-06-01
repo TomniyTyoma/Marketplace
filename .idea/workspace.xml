@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/marketplace/stooore/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/shop/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/stooore/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/stooore/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/stooore/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/stooore/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/stooore/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/stooore/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/stooore/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/stooore/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/templates/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marketplace/templates/store/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store/cart.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/marketplace/templates/store/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store/product.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +122,9 @@
       <workItem from="1684756932595" duration="15203000" />
       <workItem from="1684827398973" duration="11181000" />
       <workItem from="1685031242532" duration="5715000" />
-      <workItem from="1685129814194" duration="9827000" />
+      <workItem from="1685129814194" duration="15106000" />
+      <workItem from="1685178390469" duration="7097000" />
+      <workItem from="1685464613540" duration="17521000" />
     </task>
     <task id="LOCAL-00001" summary="commit product page">
       <created>1683556748372</created>
@@ -284,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685031650486</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary=".">
+      <created>1685171665462</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1685171665462</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

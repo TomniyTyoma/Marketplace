@@ -6,38 +6,32 @@ Techno-Shop | Категории
 {% endblock title %}
 
 {% block container %}
-<!-- BREADCRUMB -->
-		<div id="breadcrumb" class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<h3 class="breadcrumb-header">Regular Page</h3>
-						<ul class="breadcrumb-tree">
-							<li><a href="#">Home</a></li>
-							<li class="active">Blank</li>
-						</ul>
-					</div>
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /BREADCRUMB -->
 
-		<!-- SECTION -->
-		<div class="section">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
-		<!-- /SECTION -->
+
+{% for item in items %}
+<div class="row">
+	<div class="col-md-4 col-xs-6">
+					{{ forloop.counter }}
+	</div>
+	<div class="col-12 col-md-4 item">
+		{{ item.product }}
+	</div>
+	<div class="col-12 col-md-2 item">
+		{{ item.quantity }}
+	</div>
+	<div class="col-12 col-md-2 item">
+		{{ item.price }}
+	</div>
+	<div class="col-12 col-md-2 item">
+		{{ item.amount }}
+	</div>
+	<form method="post" action="{% url 'cart_delete_item' item.pk %}">
+        {% csrf_token %}
+        <button type="submit" style="color: blue"><u>delete</u></button>
+    </form>
+</div>
+{% endfor %}
+
 {% endblock container %}
 
 

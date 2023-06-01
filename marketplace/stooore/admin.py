@@ -22,3 +22,4 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Review)
 admin.site.register(OtherImgs)
+

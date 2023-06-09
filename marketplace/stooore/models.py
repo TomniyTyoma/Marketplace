@@ -106,7 +106,7 @@ class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.CharField(max_length=40, choices=STATUS_CHOICES, default=STATUS_CART)
     comment = models.TextField()
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(default=1)
     amount = models.DecimalField(max_digits=19, decimal_places=2, blank=True, null=True)
     address = models.CharField(max_length=250, blank=True, null=True)
     creation_time = models.DateTimeField(auto_now_add=True)
@@ -123,12 +123,12 @@ class Order(models.Model):
     def get_cart(user: User):
         cart = Order.objects.filter(user=user, status=Order.STATUS_CART).first()
 
-        if cart and (timezone.now() - cart.creation_time).days > 0:
+        if cart and (timezone.now() - cart.creation_time).days > 7:
             cart.delete()
             cart = None
 
         if not cart:
-            cart = Order.objects.create(user=user, status=Order.STATUS_CART, amount=0).first()
+            cart = Order.objects.create(user=user, status=Order.STATUS_CART, amount=0)
 
         return cart
 

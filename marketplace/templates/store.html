@@ -6,26 +6,7 @@ Techno-Shop | Категории
 {% endblock title %}
 
 {% block container %}
-<!-- BREADCRUMB -->
-<!--<div id="breadcrumb" class="section">-->
-<!--    &lt;!&ndash; container &ndash;&gt;-->
-<!--    <div class="container">-->
-<!--        &lt;!&ndash; row &ndash;&gt;-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12">-->
-<!--                <ul class="breadcrumb-tree">-->
-<!--                    <li><a href="#">Главная</a></li>-->
-<!--                    <li><a href="#">Все категории</a></li>-->
-<!--                    <li><a href="#">Аксессуары</a></li>-->
-<!--                    <li class="active">Наушники</li>-->
-<!--                </ul>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash; /row &ndash;&gt;-->
-<!--    </div>-->
-<!--    &lt;!&ndash; /container &ndash;&gt;-->
-<!--</div>-->
-<!-- /BREADCRUMB -->
+
 
 <!-- SECTION -->
 <div class="section">
@@ -187,42 +168,45 @@ Techno-Shop | Категории
                     <div class="col-md-4 col-xs-6" style="margin-top: 75px">
                         <div class="product">
                             <form method="post" action="{% url 'add_item_to_cart' product.pk %}">
-                                <div class="product-img">
-                                    <img src="{{product.image_url}}" alt="">
-                                    <!--                                <div class="product-label">-->
-                                    <!--                                                                        <span class="sale">-30%</span>-->
-                                    <!--                                                                        <span class="new">Новинка</span>-->
-                                    <!--                                </div>-->
+                            <div class="product-img">
+                                <img src="{{product.image_url}}" alt="">
+                                <!--                                <div class="product-label">-->
+                                <!--                                                                        <span class="sale">-30%</span>-->
+                                <!--                                                                        <span class="new">Новинка</span>-->
+                                <!--                                </div>-->
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">{{product.category_id}}</p>
+                                <h3 class="product-name"><a href="{% url 'product' product.pk %}">{{product.product_name}}</a>
+                                </h3>
+                                <h4 class="product-price">{{product.price}}
+                                    <!--                                    <del class="product-old-price">$990.00</del>-->
+                                </h4>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
+                                    <i class="fa fa-star"></i>
                                 </div>
-                                <div class="product-body">
-                                    <p class="product-category">{{product.category_id}}</p>
-                                    <h3 class="product-name"><a href="{% url 'product' product.pk %}">{{product.product_name}}</a>
-                                    </h3>
-                                    <h4 class="product-price">{{product.price}}
-                                        <!--                                    <del class="product-old-price">$990.00</del>-->
-                                    </h4>
-                                    <div class="product-rating">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
+                                <div class="product-btns">
+                                    <label class="qty-label" for="id_quantity">Количество</label>
+                                    <div class="input-number">
+                                        {% csrf_token %}
+                                        <input type="number" name="quantity" value="1" min="1" required
+                                               id="id_quantity"/>
+                                        <span class="qty-up">+</span>
+                                        <span class="qty-down">-</span>
                                     </div>
-                                    {% csrf_token %}
-                                    <div class="product-btns">
-                                        <label class="qty-label" for="id_quantity">Количество</label>
-                                        <div class="input-number">
-                                                <input type="number" name="quantity" value="1" min="1" required id="id_quantity"/>
-                                                <span class="qty-up">+</span>
-                                                <span class="qty-down">-</span>
-                                        </div>
-                                        <button class="quick-view"><a href="{% url 'product' product.pk %}"><i
-                                                    class="fa fa-eye"></i><span class="tooltipp">quick view</span></a>
-                                        </button>
-                                    </div>
+                                    <button class="quick-view"><a href="{% url 'product' product.pk %}"><i
+                                            class="fa fa-eye"></i><span class="tooltipp">Просмотр</span></a>
+                                    </button>
                                 </div>
+                            </div>
                                 <div class="add-to-cart">
-                                        <button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> В корзину</button>
+                                    <button class="add-to-cart-btn" type="submit"><i class="fa fa-shopping-cart"></i> В
+                                        корзину
+                                    </button>
                                 </div>
                             </form>
                         </div>

@@ -6,7 +6,6 @@ class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput())
 
-
     def clean(self):
         cleaned_data = super().clean()
         username = cleaned_data.get('username')

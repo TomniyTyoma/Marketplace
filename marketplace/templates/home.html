@@ -93,6 +93,7 @@
 								<!-- product -->
 								{% for product in object_list %}
 								<div class="product">
+									<form method="post" action="{% url 'add_item_to_cart' product.pk %}">
 									<div class="product-img">
 										<img src="{{product.image_url}}" alt="">
 <!--										<div class="product-label">-->
@@ -113,16 +114,25 @@
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 										</div>
+										{% csrf_token %}
 										<div class="product-btns">
-											<!--<button class="add-to-compare"><i class="fa fa-exchange"></i><span
-													class="tooltipp">add to compare</span></button>-->
-											<button class="quick-view"><a href="{% url 'product' product.pk %}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
+											<label class="qty-label" for="id_quantity">Количество</label>
+											<div class="input-number">
+												<input type="number" name="quantity" value="1" min="1" required
+													   id="id_quantity"/>
+												<span class="qty-up">+</span>
+												<span class="qty-down">-</span>
+											</div>
+											<button class="quick-view"><a href="{% url 'product' product.pk %}"><i
+													class="fa fa-eye"></i><span class="tooltipp">Просмотр</span></a>
+											</button>
 										</div>
 									</div>
 									<div class="add-to-cart">
 										<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> В корзину
 										</button>
 									</div>
+									</form>
 								</div>
 								{% endfor %}
 								<!-- /product -->

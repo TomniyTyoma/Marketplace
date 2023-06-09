@@ -8,12 +8,9 @@ from .forms import AddQuantityForm
 from .models import Product, Order, OrderItem
 
 
-def checkout(request):
-    return render(request, 'store/checkout.html', {})
+# def checkout(request):
+#     return render(request, 'store/checkout.html', {})
 
-
-def blank(request):
-    return render(request, 'store/cart.html', {})
 
 
 class ProductsListView(ListView):
@@ -66,4 +63,11 @@ class CartDeleteItem(DeleteView):
         qs = super().get_queryset()
         qs.filter(order__user=self.request.user)
         return qs
+
+
+@login_required(login_url=reverse_lazy('login'))
+def make_order(request):
+    cart = Order.get_cart(request.user)
+    cart.make_order()
+    return render(request, 'store/checkout.html', {})
 

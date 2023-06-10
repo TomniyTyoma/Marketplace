@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/authentication/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/authentication/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/store/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/marketplace/templates/store/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/marketplace/templates/store/product.html" afterDir="false" />
-    </list>
+    <list default="true" id="1c4a973e-7c1e-4ef6-8104-3e843940cd0e" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,6 +122,7 @@
       <workItem from="1686298672279" duration="847000" />
       <workItem from="1686314313502" duration="14516000" />
       <workItem from="1686355298960" duration="1668000" />
+      <workItem from="1686385166051" duration="453000" />
     </task>
     <task id="LOCAL-00001" summary="commit product page">
       <created>1683556748372</created>
@@ -312,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686315977065</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary=".">
+      <created>1686385212320</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1686385212320</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

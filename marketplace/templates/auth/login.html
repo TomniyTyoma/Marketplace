@@ -5,7 +5,7 @@
 Авторизация
 {% endblock title %}
 {% block container %}
-<div class="login-form-wrapper" style="text-align: center">
+<div class="login-form-wrapper" style="align-items: center; margin-left: 43%">
   <h1>
       Log In
   </h1>
@@ -24,12 +24,12 @@
   <div class="form-body">
     <form name="auth-form" action="{% url 'login' %}" method="POST">
       {% csrf_token %}
-      <div class="fieldset">
+      <div class="fieldset" style="padding-top: 10px">
         <input id="id_username" name="username" type="text" required>
         <label for="id_username">Login</label>
         <div class="highlighter"></div>
       </div>
-      <div class="fieldset">
+      <div class="fieldset" style="padding-top: 10px">
         <input id="id_password" name="password" type="password" required>
         <label for="id_password">Password</label>
         <div class="highlighter"></div>

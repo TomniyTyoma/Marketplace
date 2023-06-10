@@ -113,22 +113,19 @@
 				<div class="section-title text-center">
 					<h3 class="title">Ваш заказ</h3>
 				</div>
-				{% for item in items %}
 				<div class="order-summary">
 					<div class="order-col">
 						<div><strong>Товар</strong></div>
 						<div><strong>Итого</strong></div>
 					</div>
+					{% for item in items %}
 					<div class="order-products">
 						<div class="order-col">
 							<div>{{ order.item.quantity }}x {{ order.item.product }}</div>
 							<div>$980.00</div>
 						</div>
-<!--						<div class="order-col">-->
-<!--							<div>2x Product Name Goes Here</div>-->
-<!--							<div>$980.00</div>-->
-<!--						</div>-->
 					</div>
+					{% endfor %}
 <!--					<div class="order-col">-->
 <!--						<div>Shiping</div>-->
 <!--						<div><strong>FREE</strong></div>-->
@@ -138,7 +135,6 @@
 						<div><strong class="order-total">$2940.00</strong></div>
 					</div>
 				</div>
-				{% endfor %}
 				<div class="payment-method">
 					<div class="input-radio">
 						<input type="radio" name="payment" id="payment-1">

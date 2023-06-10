@@ -5,14 +5,14 @@
 Регистрация
 {% endblock title %}
 {% block container %}
-<div class="main" style="text-align: center">
+<div class="main" style="align-items: center; margin-left: 43%">
   <div class="one">
     <div class="register">
       <h1>Create your account</h1>
       <form id="reg-form" method="post" action="{% url 'register' %}">
         {% csrf_token %}
         {% for field in user_form %}
-        <div>
+        <div style="padding-top: 10px">
           <span style="color: red">{{ field.errors }}</span>
           {{ field }}
           {{ field.label_tag}}

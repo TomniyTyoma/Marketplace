@@ -150,6 +150,7 @@ class Order(models.Model):
             self.status = Order.STATUS_WAITING_FOR_PAYMENT
             self.save()
 
+
     @staticmethod
     def get_amount_of_unpaid_orders(user: User):
         amount = Order.objects.filter(user=user, status=Order.STATUS_WAITING_FOR_PAYMENT, ).aggregate(Sum('amount'))[
